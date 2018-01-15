@@ -1,17 +1,21 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { OnInit, OnDestroy } from '@angular/core';
+import { IProduct } from './product';
 
 @Component({
     selector: 'pm-products',
-    templateUrl: './product-list.component.html'
+    templateUrl: './product-list.component.html',
+    styleUrls: ['./product-list.component.css']
 })
 
-export class ProductListComponent {
+export class ProductListComponent implements OnInit, OnDestroy {
 
     imageWidth: number = 50;
     imageMargin: number = 2;
     pageTitle: string = 'Product List';
     showImage: boolean;
-    products: any[] = [
+    listFilter: string = 'cart';
+    products: IProduct[] = [
         {
             'productId': 1,
             'productName': 'Leaf Rake',
@@ -65,7 +69,15 @@ export class ProductListComponent {
     ];
 
     toggleImage(): void {
-        console.log('Button clicked');
         this.showImage = !this.showImage;
+        console.log('showImage = ' + this.showImage);
+    }
+
+    ngOnInit(): void {
+        console.log('[control] ProductListComponent has been created');
+    }
+
+    ngOnDestroy(): void {
+        console.log('[control] ProductListComponent has been destroyed');
     }
 }
