@@ -47,7 +47,7 @@
                     </td>
                     <!-- Two way binding -->
                     <td>{{product.productName | uppercase}}</td>
-                    <td>{{product.productCode | lowercase}}</td>
+                    <td>{{product.productCode | lowercase | convertToSpaces: '-'}}</td>
                     <td>{{product.releaseDate | date }}</td>
                     <td>{{product.price | currency:'USD':true:'1.2-2'}}</td>
                     <td>{{product.starRating}}</td>
