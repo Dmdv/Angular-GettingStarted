@@ -84,6 +84,10 @@ export class ProductListComponent implements OnInit, OnDestroy {
         this.listFilter = 'cart';
     }
 
+    onStarRated(message: string): void {
+        this.pageTitle = 'Product list: ' + message;
+    }
+
     performFilter(filterBy: string): IProduct[] {
         filterBy = filterBy.toLocaleLowerCase();
         return this.products.filter((product: IProduct) =>

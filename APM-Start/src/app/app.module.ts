@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
 import { Comment } from '@angular/compiler';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
+import { StarComponent } from './shared/star.component';
 
 @NgModule({
   // directive components and pipes which we defined
   declarations: [
     AppComponent,
     ProductListComponent,
-    ConvertToSpacesPipe
+    ConvertToSpacesPipe,
+    StarComponent
   ],
   // Everything that we use from other sources such as Angular or vendors or external modules
   imports: [
