@@ -6,6 +6,8 @@ import { ProductListComponent } from './products/product-list.component';
 import { Comment } from '@angular/compiler';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { StarComponent } from './shared/star.component';
+import { ProductService } from './services/products.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   // directive components and pipes which we defined
@@ -18,9 +20,12 @@ import { StarComponent } from './shared/star.component';
   // Everything that we use from other sources such as Angular or vendors or external modules
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
